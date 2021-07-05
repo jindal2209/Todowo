@@ -1,5 +1,6 @@
 # Todowo
 An application to manage dailty tasks
+hosted here "todowo.herokuapp.com"
 
 to run it locally install python form https://python.org (make sure to add it to PATH)
 after installing python create virtual enviironment using 
