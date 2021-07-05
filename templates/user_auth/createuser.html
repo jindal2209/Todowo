@@ -1,0 +1,36 @@
+{% extends 'user_auth/base.html' %}
+
+
+{% block content %}
+
+<body class="text-center">
+   
+    <form method='POST' id='signupform' class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+        <br>
+        
+        {% if error %}
+        <div class="alert alert-danger">
+            {{error}}
+        </div>    
+        {% endif %}
+
+        {% csrf_token %}
+        
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" placeholder='Username' class="form-control" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+        <br>
+        <label for="id_password1" class="sr-only">Password</label>
+        <input type="password" name="password1" class="form-control" placeholder='Password' autocomplete="current-password" required id="id_password">
+        <br>
+        <label for="id_password2" class="sr-only">Confirm Password</label>
+        <input type="password" name="password2" class="form-control" placeholder=' Confirm Password' autocomplete="current-password" required id="id_password">
+        <br>
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign Up">
+
+    </form>
+
+</body>
+</html>
+
+{% endblock %}

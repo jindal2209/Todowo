@@ -1,0 +1,70 @@
+{% extends 'user_auth/base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'user_auth/css/home.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
+<br>
+
+<div id='header'>
+    <h1 class="list-group-item-heading"><strong>My Todos</strong></h1>
+
+    {% if todos %}
+    <br>
+    <h5 class="list-group-item-heading">You have {{num}} todos</h4>
+    <br>
+    {% for todo in todos %}
+</div>
+
+<div>
+
+    {% if todo.important %}
+    <ul>
+        <a id='imp' class="list-group-item" href="{% url 'showtodos' todo.pk %}">
+            <li class="list-group-item-heading"><strong>{{ todo.title }} (IMPORTANT)</strong></li>
+            <p class="list-group-item-text">{{  todo.description }}</p>
+        </a>              
+    </ul> 
+    {% else %}
+    <ul class='notimp'>
+        <a class="list-group-item" href="{% url 'showtodos' todo.pk %}">
+            <li class="list-group-item-heading"><strong>{{ todo.title }}</strong></li>
+            <p class="list-group-item-text">{{  todo.description }}</p>
+        </a>              
+    </ul> 
+    {% endif %}
+    {% endfor %}
+
+    {% else %}
+    <br>
+    <div id='header'>
+        <h5 class="list-group-item-heading">You have not created any todo </h4>
+    </div>
+
+    {% endif %}
+</div>
+{% else %}
+<div class='homepage'>
+    Welcome!
+    <br>
+    
+    <div class='homepage_in'>
+        Create your todos now and manage daily tasks.
+        <br>
+        <a href="{% url 'createuser' %}">Join Now</a>
+    </div>
+  
+
+</div>
+<br
+
+
+
+
+{% endif %}
+
+
+{% endblock %}

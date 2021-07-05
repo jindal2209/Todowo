@@ -1,0 +1,40 @@
+#imp:hover{
+    background-color: rgb(226, 233, 245);
+
+}
+.list-group-item{
+    margin-left: 30px;
+    padding: 15px;
+    width: 90%;
+}
+
+.list-group-item:hover{
+    border : 2px solid rgb(68, 122, 223);
+}
+
+li{
+    list-style: none;
+}
+
+div{
+    padding: 10px;
+}
+
+#header{
+    margin-left: 25px;
+}
+
+img{
+    max-height: 10%;
+    max-width: 100%;
+}
+
+.homepage{
+    color: rgb(10, 45, 110);
+    font-size: 35px;
+    padding-left: 50px;
+    font-family: 'Alegreya', serif;
+}
+.homepage_in{
+    font-size: 25px;
+}
