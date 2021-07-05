@@ -13,7 +13,7 @@ in the command line run
 
 now the environment will be activated and we can install django
 ```pip install Django==3.0.8```
-after it is installed open cmd inside project folder
+after it is installed open cmd inside project folder and run <br>
 ```python manage.py createsuperuser``` (enter the details that it will ask)<br>
 ```python manage.py makemigration``` <br>
 ```python manage.py migrate```<br>
